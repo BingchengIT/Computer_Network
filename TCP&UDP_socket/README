@@ -1,0 +1,13 @@
+1. I used Bingchengs-MacBook-Air(my own computer) undergrad environment to build and test on my program.
+
+2. My compilers version is javac 1.6.0_65.
+
+3. In my program, firstly in the undergrad environment I compile the program by typing "make",
+   then, use command "java server &", it will make a single thread to run server class and tell me
+   the The current n_port number is 3001. After that, type enter keyboard again, then use command
+   "java client localhost 3001 "Hello world"", lastly, it will give me a r_port number and 
+   the reversed string of "Hello world" => "dlrow olleh". If the input is not valid, my program will 
+   hand exception and print "Invalid input".
+   
+4. In my program, it only supports that server handles one request and then exits. If you want to handle
+   the second request, you have to connect server again.
