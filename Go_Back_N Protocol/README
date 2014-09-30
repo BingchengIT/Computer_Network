@@ -1,0 +1,31 @@
+1.  I used linux032.student.cs for the host1
+    I used linux024.student.cs for the host2
+    I used linux028.student.cs for the host3
+
+2. In my Makefile:
+
+JFLAGS = -g
+JC = javac
+.SUFFIXES: .java .class
+.java.class:
+       	$(JC) $(JFLAGS) $*.java
+
+CLASSES = \
+        sender.java \
+        receiver.java \
+        packet.java
+
+default: classes
+
+classes: $(CLASSES:.java=.class)
+
+clean:
+        $(RM) *.class
+
+3. My compilers version is javac 1.6.0_65.
+
+4. In my program, please open three terminal windows and login in host1, host2 and host3, then
+    in the host1, run ./nEmulator-linux386 9001 linux024.student.cs 9004 9003 linux028.student.cs 9002 1 0.2 0
+    in the host2, run java receiver linux032.student.cs 9003 9004 output.txt
+    Before run host3, please add texts into input.txt.
+    in the host3, run java sender linux032.student.cs 9003 9002 input.txt
